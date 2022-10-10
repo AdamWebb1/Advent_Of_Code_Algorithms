@@ -17,7 +17,7 @@ last = None
 
 window = []
 last = sys.maxsize - 1
-count = 0
+count = 1
 
 #Iterate through list
 for i in range(0, len(depths)-3):
@@ -25,33 +25,14 @@ for i in range(0, len(depths)-3):
     window = depths[i:i+3]
 
     #Convert the window to ints
-    for e in range(len(window)-1):
+    for e in range(len(window)):
         window[e] = int(window[e])
 
     #Check the window
-    if last < sum(window):
+    s = int(sum(window))
+    if last < s:
         count += 1
-print(count)
-
-"""
-for depth in depths:
     
-    if len(window) == 2:
-        window.pop(0)
-    window.append(int(depth))
-    # print(window)
-
-    depthSum = sum(window)
-    print(depthSum)
-    if last == None:
-        pass
-    elif last < depthSum:
-        count += 1 
-        print("YES")
-
-    last = depthSum
-
-"""
-
-#
+    last = s
+print(count)
     
