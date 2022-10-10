@@ -19,12 +19,16 @@ window = []
 last = sys.maxsize - 1
 count = 0
 
+#Iterate through list
 for i in range(0, len(depths)-3):
+    #Load the window
     window = depths[i:i+3]
 
+    #Convert the window to ints
     for e in range(len(window)-1):
         window[e] = int(window[e])
 
+    #Check the window
     if last < sum(window):
         count += 1
 print(count)
