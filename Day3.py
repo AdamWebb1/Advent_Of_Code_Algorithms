@@ -3,6 +3,9 @@
 # count1 = 0
 
 
+
+
+
 def BinaryToDecimal(binary):
     decimal = 0
     for digit in binary:
@@ -97,11 +100,15 @@ for bit in range(len(diagnostics[0])):
 
     for value in range(len(diagnostics)-1, -1, -1):
         if int(diagnostics[value][bit]) == mostCommon:
+            if len(diagnostics) == 2:
+                print(diagnostics)
+                print(diagnostics[value], diagnostics[value][bit], bit)
             if len(diagnostics) == 1:
                 print("done")
                 break
             print("popped: " + str(diagnostics.pop(value)))
 
+print(diagnostics)
 co2 = diagnostics[0]
 
 print(nOnes, nZeros, mostCommon)
